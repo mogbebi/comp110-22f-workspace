@@ -46,4 +46,3 @@ if matching_letters == 1:
 
 if matching_letters > 1:
     print(str(matching_letters) + " instances of " + letter_input + " found in " + word_input)
-

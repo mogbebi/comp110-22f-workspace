@@ -70,8 +70,8 @@ def main() -> None:
     """If the loop ends and the player has used up all guesses, the game over message is displayed."""
     if turn_number == 6:
         print("X/6 – Sorry, try again tomorrow!")
+
+
 """Allows this function to be available as a module."""
-
-
 if __name__ == "__main__":
     main()

@@ -1,6 +1,7 @@
-"""EX03 - Structured Wordle (now with functions!)"""
+"""EX03 - Structured Wordle (now with functions)!"""
 
 __author__ = "730480375"
+
 
 def contains_char(word_searched: str, current_letter: str) -> bool:
     """Determines whether an input letter is present in an input word."""
@@ -13,6 +14,7 @@ def contains_char(word_searched: str, current_letter: str) -> bool:
             i += 1
     if i == len(word_searched):
         return False
+
 
 def emojified(guess: str, secret_word: str) -> str:
     """Determines whether an input letter is present in an input word."""
@@ -43,12 +45,13 @@ def input_guess(word_length: int) -> str:
         new_guess = input(f"That wasn't {word_length} chars! Try again: ")
     return new_guess
 
+
 def main() -> None:
     """The entrypoint of the prgram and main game loop."""
     turn_number: int = 0
     secret_word: str = "codes"
     still_playing: bool = True
-    while turn_number < len(secret_word) and still_playing:
+    while turn_number < 6 and still_playing:
         """Prints the current turn numbe."""
         print(f"=== Turn {turn_number + 1}/6 ===")
         """Sets a variable equal to the output of the input_guess function."""
@@ -63,6 +66,8 @@ def main() -> None:
         else:
             """If the guess is incorrect, the loop continues."""
             turn_number += 1
+
+
     """If the loop ends and the player has used up all guesses, the game over message is displayed."""
     if turn_number == len(secret_word):
         print("X/6 – Sorry, try again tomorrow!")

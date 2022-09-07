@@ -36,8 +36,10 @@ while i < letter_number:
         else:
             i = i + 1
 
+"""Prints the square output."""
 print(square_output)
 
+"""Outputs message based on the correctness of the input."""
 if guess != secret:
     print("Not quite. Play again soon!")
 else:

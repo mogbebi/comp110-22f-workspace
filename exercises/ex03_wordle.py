@@ -7,17 +7,20 @@ def contains_char(word_searched: str, current_letter: str) -> bool:
     """Determines whether an input letter is present in an input word."""
     assert len(current_letter) == 1
     i: int = 0
-    while i < len(word_searched):
+    done_scanning: bool = False
+    while i < len(word_searched) and not done_scanning:
         if word_searched[i] == current_letter:
-            return True
+            done_scanning = True
         else:
             i += 1
-    if i == len(word_searched):
+    if done_scanning:
+        return True
+    else:
         return False
 
 
 def emojified(guess: str, secret_word: str) -> str:
-    """Determines whether an input letter is present in an input word."""
+    """Compares the secret word with the guess of the same length and outputs the emojified version of the guess."""
     assert len(guess) == len(secret_word)
     i: int = 0
     WHITE_BOX: str = "\U00002B1C"
@@ -47,16 +50,16 @@ def input_guess(word_length: int) -> str:
 
 
 def main() -> None:
-    """The entrypoint of the prgram and main game loop."""
+    """The entrypoint of the program and main game loop."""
     turn_number: int = 0
     secret_word: str = "codes"
     still_playing: bool = True
     while turn_number < 6 and still_playing:
-        """Prints the current turn numbe."""
+        """Prints the current turn number."""
         print(f"=== Turn {turn_number + 1}/6 ===")
         """Sets a variable equal to the output of the input_guess function."""
         new_guess: str = input_guess(len(secret_word))
-        """Uses the new_guess variable in the emojified function, which turns the guess into the emojified output."""
+        """Uses the new_guess variable in the emojified function to turn the guess into the emojified output."""
         print(emojified(new_guess, secret_word))
         """Determines if the guess matches the secret word and acts accordingly."""
         if new_guess == secret_word:
@@ -67,11 +70,11 @@ def main() -> None:
             """If the guess is incorrect, the loop continues."""
             turn_number += 1
 
-    """If the loop ends and the player has used up all guesses, the game over message is displayed."""
+    """If the loop ends and the player has used up all 6 guesses, the game over message is displayed."""
     if turn_number == 6:
         print("X/6 – Sorry, try again tomorrow!")
 
 
-"""Allows this function to be available as a module."""
+"""Allows this function to be available as a Python module."""
 if __name__ == "__main__":
     main()

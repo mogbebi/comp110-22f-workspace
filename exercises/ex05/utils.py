@@ -39,11 +39,14 @@ def concat(list_1: list[int], list_2: list[int]) -> list[int]:
 def sub(input: list[int], start: int, end: int) -> list[int]:
     """Returns the sub-list of a given a list of ints, a start index, and end index (non-inclusinve)."""
     list_output: list[int] = list()
-    if len(input) == 0:
+    i = start
+    if len(input) == 0 or start > len(input) or end <= 0:
         return list_output
-    else:
-        i = start
-        while i < end:
-            list_output.append(input[i])
-            i += 1
-        return list_output
+    if start < 0:
+        i = 0
+    if end > len(input):
+        end = len(input)
+    while i < end:
+        list_output.append(input[i])
+        i += 1
+    return list_output

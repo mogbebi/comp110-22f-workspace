@@ -21,10 +21,10 @@ def only_evens(input: list[int]) -> list[int]:
 
 def concat(list_1: list[int], list_2: list[int]) -> list[int]:
     """Concatenates two list of ints into one larger list of ints in the order specified."""
-    if len(list_1) == 0:
-        return list_2
+    list_output: list[int] = list()
+    if len(list_1) == 0 and len(list_2) == 0:
+        return list_output
     else:
-        list_output: list[int] = list()
         i: int = 0
         while i < len(list_1):
             list_output.append(list_1[i])

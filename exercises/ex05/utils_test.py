@@ -1,4 +1,4 @@
-""""Unit Tests for EX05 functions."""
+"""Unit Tests for EX05 functions."""
 
 __author__ = "730480375"
 
@@ -28,7 +28,7 @@ def test_concat_empty_first_list() -> None:
     """Tests the edge case of the first list being empty."""
     empty_list: list[int] = list()
     normal_list: list[int] = [3, 4, 1, 2]
-    assert concat(empty_list, normal_list) == normal_list
+    assert concat(empty_list, normal_list) == [3, 4, 1, 2]
 
 
 def test_concat_same_list_lengths() -> None:

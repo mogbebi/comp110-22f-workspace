@@ -56,6 +56,7 @@ def main() -> None:
 
 
 def greet() -> None:
+    """Welcomes the player, gives context to the game, and assigns the player variable to the player's name input."""
     print("\nWelcome to the University of North Carolina at Chapel Hill, the flagship of the")
     print(f"UNC school system, home to sunny skies, friendly people, and... lead water!? {CONFUSED_FACE}")
     global player 
@@ -63,6 +64,7 @@ def greet() -> None:
 
 
 def test_library() -> None:
+    """Function that gives calculated "lawsuit money" based on real EHS test results chosen from a list, and update the points value accordingly."""
     fountain_results: list[float] = [9.0, 3.1, 185.0, 2.0]
     sink_results: list[float] = [2.9, 4.6, 3.1, 3.6, 12.1, 2.0, 4.0, 7.0, 96.3, 24.4, 6.3, 30.3, 2.6, 2.8]
     test_fountain: str = "Test fountain"
@@ -84,6 +86,7 @@ def test_library() -> None:
         
     
 def fountain_test(result: float):
+    """Smaller function that calculates the "lawsuit money" earned based on the randomly chosen EHS lead result from a fountain."""
     print(f"\nResults loading {TEST_TUBE}...")
     factor: float = round((result / 15.0), 2)
     global points
@@ -98,6 +101,7 @@ def fountain_test(result: float):
 
 
 def sink_test(result: float):
+    """Smaller function that calculates the "lawsuit money" earned based on the randomly chosen EHS lead result from a sink."""
     print(f"\nResults loading {TEST_TUBE}...")
     factor: float = round((result / 15.0), 2)
     global points
@@ -109,9 +113,9 @@ def sink_test(result: float):
 
 
 def test_dorms(x: int) -> int:
+    """Function that calculates the "lawsuit money" based on how old the user-inputted dorm is, and updates the player value accordingly."""
     dorm_names_years: tuple[str, int] = ["Alderman", 1937, "Alexander", 1939, "Avery", 1958, "Carmichael", 1986, "Cobb", 1952, "Conner", 1948, "Craige", 1962, "Craige North", 2002, "Ehringhaus", 1962, "Everett", 1928, "Graham", 1924, "Grimes", 1922, "Hardin", 2002, "Hinton James", 1967, "Horton", 2002, "Joyner", 1947, "Kenan", 1939, "Koury", 2002, "Lewis", 1924, "Magnum", 1922, "Manly", 1922, "McClinton", 1924, "McIver", 1939, "Morrison", 1965, "Old East", 1795, "Old West", 1823, "Parker", 1958, "Rams 1", 2006, "Rams 2", 2006, "Rams 3", 2006, "Rams 4", 2006, "Rams 5", 2006, "Stacy", 1938, "Spencer", 1924, "Teague", 1958, "Ruffin", 1922, "Winston", 1948]
     dorm_input: str = input("\nWhat dorm do you live in?\n> ")
-    
     i: int = 0
     while i < len(dorm_names_years):
         if dorm_names_years[i] == dorm_input:
@@ -136,6 +140,7 @@ def test_dorms(x: int) -> int:
 
 
 def exit_game() -> None:
+    """Function to end the game when the player chooses the ignore the issue."""
     print(f"\nYou're right {player}, so what if there's a little lead poisoning? Kids these days have it too easy anyway!")
     print(f"You earned ${points} in lawsuit money.")
 

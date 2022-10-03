@@ -71,7 +71,7 @@ def test_library() -> None:
     test_fountain: str = "Test fountain"
     test_sink: str = "Test sink"
     option_tree: str = f"{test_fountain} {FOUNTAIN_EMOJI}\n{test_sink} {SINK_EMOJI}\n> "
-    print("\nWhich one do you want to test?")
+    print(f"\nWhich one do you want to test, {player}?")
     test_choice: str = input(option_tree)
     while test_choice != test_fountain and test_choice != test_sink:
         test_choice = input(f"\nThat's not an option! Please type one of the options listed below:\n{option_tree}")
@@ -117,7 +117,7 @@ def test_dorms(x: int) -> int:
     """Function that calculates the "lawsuit money" based on how old the user-inputted dorm is, and updates the player value accordingly."""
     dorm_names: list[str] = ["Alderman", "Alexander", "Avery", "Carmichael", "Cobb", "Conner", "Craige", "Craige North", "Ehringhaus", "Everett", "Graham", "Grimes", "Hardin", "Hinton James", "Horton", "Joyner", "Kenan", "Koury", "Lewis", "Magnum", "Manly", "McClinton", "McIver", "Morrison", "Old East", "Old West", "Parker", "Rams 1", "Rams 2", "Rams 3", "Rams 4", "Rams 5", "Stacy", "Spencer", "Teague", "Ruffin", "Winston"]
     dorm_years: list[int] = [1937, 1939, 1958, 1986, 1952, 1948, 1962, 2002, 1962, 1928, 1924, 1922, 2002, 1967, 2002, 1947, 1939, 2002, 1924, 1922, 1922, 1924, 1939, 1965, 1795, 1823, 1958, 2006, 2006, 2006, 2006, 2006, 1938, 1924, 1958, 1922, 1948]
-    dorm_input: str = input("\nWhat dorm are you testing?\n> ")
+    dorm_input: str = input(f"\nWhat dorm are you testing, {player}?\n> ")
     i: int = 0
     while i < len(dorm_names):
         if dorm_names[i] == dorm_input:

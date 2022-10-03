@@ -86,7 +86,7 @@ def test_library() -> None:
         sink_test(sink_results[i])
         
     
-def fountain_test(result: float):
+def fountain_test(result: float) -> None:
     """Smaller function that calculates the "lawsuit money" earned based on the randomly chosen EHS lead result from a fountain."""
     print(f"\nResults loading {TEST_TUBE}...")
     factor: float = round((result / 15.0), 2)
@@ -101,7 +101,7 @@ def fountain_test(result: float):
         print("\nAt this rate, you're gonna be rolling in dough after four years of undergrad!")
 
 
-def sink_test(result: float):
+def sink_test(result: float) -> None:
     """Smaller function that calculates the "lawsuit money" earned based on the randomly chosen EHS lead result from a sink."""
     print(f"\nResults loading {TEST_TUBE}...")
     factor: float = round((result / 15.0), 2)

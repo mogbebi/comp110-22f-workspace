@@ -1,6 +1,7 @@
 """Practice with dictionary functions."""
 
-__author__  = "730480375"
+__author__ = "730480375"
+
 
 def invert(dict_input: dict[str, str]) -> dict[str, str]:
     """Inverts a dict input by reversing each key-pair value."""
@@ -48,6 +49,7 @@ def favorite_color(names_colors: dict[str, str]) -> str:
 
 
 def count(list_input: list[str]) -> dict[str, int]:
+    """Outputs a dictionary that counts the number of times a string appears in the list."""
     dict_output: dict[str, int] = dict()
     if len(list_input) == 0:
         return dict_output

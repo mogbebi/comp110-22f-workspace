@@ -21,7 +21,7 @@ def invert(dict_input: dict[str, str]) -> dict[str, str]:
                 j += 1
         i += 1
     for key in dict_input:
-        inverted_dict[dict_input[key]] = key
+            inverted_dict[dict_input[key]] = key
     return inverted_dict
 
 
